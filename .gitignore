@@ -1,0 +1,54 @@
+# WordPress core
+/wp-admin/
+/wp-includes/
+/*.php
+!/index.php
+
+# Sensitive/local config
+/wp-config.php
+.env
+.env.*
+*.log
+
+# Runtime/generated data
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/debug.log
+/.artifacts/
+
+# Ignore all installed plugins by default
+/wp-content/plugins/*
+
+# Keep our project-owned plugins
+!/wp-content/plugins/store-commerce-core/
+!/wp-content/plugins/store-header-experience/
+!/wp-content/plugins/store-shopping-polish/
+!/wp-content/plugins/store-featured-collection/
+!/wp-content/plugins/store-professional-footer/
+!/wp-content/plugins/store-payment-reliability-test/
+!/wp-content/plugins/store-fulfillment-baseline/
+!/wp-content/plugins/store-returns-baseline/
+!/wp-content/plugins/store-notifications-baseline/
+!/wp-content/plugins/store-motion-layer/
+
+# Ignore installed themes
+/wp-content/themes/*
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Local tools
+/.tools/
+
+# Accidental PowerShell/runtime files
+/Microsoft/
+
+# Generated WordPress root files we do not need in this code repo
+/.htaccess
+/index.php
+/license.txt
+/readme.html
+/wp-content/index.php

@@ -1,0 +1,31 @@
+:root{--store-motion-ease:cubic-bezier(.22,.61,.36,1)}
+.store-hero{isolation:isolate;overflow:hidden}
+.store-hero>.wp-block-cover__image-background{will-change:transform;transform:translate3d(var(--hero-x,0),var(--hero-y,0),0) scale(1.018) rotate(var(--hero-r,0deg));transform-origin:center;transition:transform .35s var(--store-motion-ease)}
+.home .store-discovery .store-category-card,.woocommerce ul.products li.product{transform-style:preserve-3d;transform-origin:center;backface-visibility:hidden}
+.home .store-discovery .store-category-card__media,.woocommerce ul.products li.product>figure{transform:translateZ(0);transition:transform .32s var(--store-motion-ease),box-shadow .32s var(--store-motion-ease)}
+.home .store-discovery .store-category-card__media img,.woocommerce ul.products li.product .ct-media-container img{transition:transform .42s var(--store-motion-ease),opacity .3s ease}
+:is(.wp-element-button,.wp-block-button__link,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button,button:not(.components-button)){transition:transform .18s var(--store-motion-ease),box-shadow .22s ease,background-color .2s ease,filter .2s ease}
+:is(.wp-element-button,.wp-block-button__link,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button,button:not(.components-button)):active{transform:translateY(1px)!important;box-shadow:0 3px 10px rgba(20,38,28,.12)!important}
+.home .store-sale-band{position:relative;isolation:isolate;overflow:hidden}
+.home .store-sale-band:before{content:"";position:absolute;z-index:-1;inset:10% 4% auto auto;width:36%;aspect-ratio:1;border:1px solid rgba(255,255,255,.08);border-radius:28px;transform:translate3d(0,-8px,0) rotate(-3deg);pointer-events:none}
+.home .store-sale-band .store-sale-products{position:relative;z-index:1;transform:translateZ(0)}
+@media (min-width:1025px) and (hover:hover) and (pointer:fine){
+ .store-hero>.wp-block-cover__image-background{transition:transform .12s linear}
+ .home .store-discovery .store-category-card{will-change:transform;transform:perspective(900px) translate3d(0,var(--lift,0),0) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg))!important;transition:transform .2s var(--store-motion-ease),box-shadow .28s ease!important}
+ .home .store-discovery .store-category-card:hover{--lift:-5px;box-shadow:0 18px 40px rgba(20,38,28,.11)!important}
+ .home .store-discovery .store-category-card:hover .store-category-card__media{transform:translateZ(8px)}
+ .home .store-discovery .store-category-card:hover .store-category-card__media img{transform:scale(1.035)}
+ .woocommerce ul.products li.product{will-change:transform;transform:perspective(1000px) translate3d(0,var(--product-lift,0),0) rotateX(var(--product-x,0deg)) rotateY(var(--product-y,0deg))!important;transition:transform .22s var(--store-motion-ease)!important}
+ .woocommerce ul.products li.product:hover{--product-lift:-4px}
+ .woocommerce ul.products li.product:hover>figure{box-shadow:0 16px 34px rgba(20,38,28,.1)}
+ .woocommerce ul.products li.product:hover .ct-media-container img{transform:scale(1.03)}
+ :is(.wp-element-button,.wp-block-button__link,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button,button:not(.components-button)):hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(20,38,28,.14)}
+}
+@media (max-width:1024px),(hover:none),(pointer:coarse){
+ .store-hero>.wp-block-cover__image-background,.home .store-discovery .store-category-card,.woocommerce ul.products li.product{will-change:auto;transform:none!important}
+ .home .store-discovery .store-category-card__media img,.woocommerce ul.products li.product .ct-media-container img{transform:none!important}
+}
+@media (prefers-reduced-motion:reduce){
+ .store-hero>.wp-block-cover__image-background,.home .store-discovery .store-category-card,.home .store-discovery .store-category-card__media,.home .store-discovery .store-category-card__media img,.woocommerce ul.products li.product,.woocommerce ul.products li.product>figure,.woocommerce ul.products li.product .ct-media-container img,.home .store-sale-band:before,:is(.wp-element-button,.wp-block-button__link,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button,button:not(.components-button)){animation:none!important;transition:none!important;transform:none!important}
+}
+:is(a,button,input,select,textarea):focus-visible{outline:3px solid #1f4f46!important;outline-offset:3px!important}
